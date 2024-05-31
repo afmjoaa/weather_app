@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hive/hive.dart';
-import 'package:weather_app/data/base_model.dart';
+import 'package:weather_app/data/model/base_model.dart';
 import 'package:weather_app/data/storage/hive_type_ids.dart';
 import 'package:weather_app/domain/entity/current_weather.dart';
 import 'package:weather_app/utility/utility.dart';

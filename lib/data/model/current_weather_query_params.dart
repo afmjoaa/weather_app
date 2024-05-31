@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:weather_app/data/base_model.dart';
+import 'package:weather_app/data/model/base_model.dart';
 
 part 'current_weather_query_params.freezed.dart';
 part 'current_weather_query_params.g.dart';
