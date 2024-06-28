@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/core/weather_application.dart';
 import 'package:weather_app/core/weather_inherited_widget.dart';
+import 'package:weather_app/ui/screen/home/home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,6 +42,7 @@ class WeatherApp extends StatelessWidget {
         fontFamily: 'MohrRounded',
       ),
       routes: weatherApplication.routes,
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
 
