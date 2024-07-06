@@ -18,148 +18,243 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$LoadingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() initialLoadingState,
+    required TResult Function() loadingStartedState,
+    required TResult Function(String errorMessage) loadingFailedState,
+    required TResult Function() loadingSuccessState,
+    required TResult Function() loadingCompletedState,
   }) =>
       throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) =>
-      throw _privateConstructorUsedError;
+
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function()? initialLoadingState,
+    TResult Function()? loadingStartedState,
+    TResult Function(String errorMessage)? loadingFailedState,
+    TResult Function()? loadingSuccessState,
+    TResult Function()? loadingCompletedState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $LoadingStateCopyWith<$Res> {
-  factory $LoadingStateCopyWith(
-          LoadingState value, $Res Function(LoadingState) then) =
-      _$LoadingStateCopyWithImpl<$Res, LoadingState>;
-}
 
-/// @nodoc
-class _$LoadingStateCopyWithImpl<$Res, $Val extends LoadingState>
-    implements $LoadingStateCopyWith<$Res> {
-  _$LoadingStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$LoadingStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl();
+class _$InitialLoadingStateImpl implements InitialLoadingState {
+  const _$InitialLoadingStateImpl();
 
   @override
   String toString() {
-    return 'LoadingState.initial()';
+    return 'LoadingState.initialLoadingState()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initial,
+    required TResult Function() initialLoadingState,
+    required TResult Function() loadingStartedState,
+    required TResult Function(String errorMessage) loadingFailedState,
+    required TResult Function() loadingSuccessState,
+    required TResult Function() loadingCompletedState,
   }) {
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-  }) {
-    return initial?.call();
+    return initialLoadingState();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
+    TResult Function()? initialLoadingState,
+    TResult Function()? loadingStartedState,
+    TResult Function(String errorMessage)? loadingFailedState,
+    TResult Function()? loadingSuccessState,
+    TResult Function()? loadingCompletedState,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
+    if (initialLoadingState != null) {
+      return initialLoadingState();
     }
     return orElse();
   }
 }
 
-abstract class _Initial implements LoadingState {
-  const factory _Initial() = _$InitialImpl;
+abstract class InitialLoadingState implements LoadingState {
+  const factory InitialLoadingState() = _$InitialLoadingStateImpl;
+}
+
+/// @nodoc
+
+class _$LoadingStartedStateImpl implements LoadingStartedState {
+  const _$LoadingStartedStateImpl();
+
+  @override
+  String toString() {
+    return 'LoadingState.loadingStartedState()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialLoadingState,
+    required TResult Function() loadingStartedState,
+    required TResult Function(String errorMessage) loadingFailedState,
+    required TResult Function() loadingSuccessState,
+    required TResult Function() loadingCompletedState,
+  }) {
+    return loadingStartedState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialLoadingState,
+    TResult Function()? loadingStartedState,
+    TResult Function(String errorMessage)? loadingFailedState,
+    TResult Function()? loadingSuccessState,
+    TResult Function()? loadingCompletedState,
+    required TResult orElse(),
+  }) {
+    if (loadingStartedState != null) {
+      return loadingStartedState();
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingStartedState implements LoadingState {
+  const factory LoadingStartedState() = _$LoadingStartedStateImpl;
+}
+
+/// @nodoc
+
+class _$LoadingFailedStateImpl implements LoadingFailedState {
+  const _$LoadingFailedStateImpl(this.errorMessage);
+
+  @override
+  final String errorMessage;
+
+  @override
+  String toString() {
+    return 'LoadingState.loadingFailedState(errorMessage: $errorMessage)';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialLoadingState,
+    required TResult Function() loadingStartedState,
+    required TResult Function(String errorMessage) loadingFailedState,
+    required TResult Function() loadingSuccessState,
+    required TResult Function() loadingCompletedState,
+  }) {
+    return loadingFailedState(errorMessage);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialLoadingState,
+    TResult Function()? loadingStartedState,
+    TResult Function(String errorMessage)? loadingFailedState,
+    TResult Function()? loadingSuccessState,
+    TResult Function()? loadingCompletedState,
+    required TResult orElse(),
+  }) {
+    if (loadingFailedState != null) {
+      return loadingFailedState(errorMessage);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingFailedState implements LoadingState {
+  const factory LoadingFailedState(final String errorMessage) =
+      _$LoadingFailedStateImpl;
+
+  String get errorMessage;
+}
+
+/// @nodoc
+
+class _$LoadingSuccessStateImpl implements LoadingSuccessState {
+  const _$LoadingSuccessStateImpl();
+
+  @override
+  String toString() {
+    return 'LoadingState.loadingSuccessState()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialLoadingState,
+    required TResult Function() loadingStartedState,
+    required TResult Function(String errorMessage) loadingFailedState,
+    required TResult Function() loadingSuccessState,
+    required TResult Function() loadingCompletedState,
+  }) {
+    return loadingSuccessState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialLoadingState,
+    TResult Function()? loadingStartedState,
+    TResult Function(String errorMessage)? loadingFailedState,
+    TResult Function()? loadingSuccessState,
+    TResult Function()? loadingCompletedState,
+    required TResult orElse(),
+  }) {
+    if (loadingSuccessState != null) {
+      return loadingSuccessState();
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingSuccessState implements LoadingState {
+  const factory LoadingSuccessState() = _$LoadingSuccessStateImpl;
+}
+
+/// @nodoc
+
+class _$LoadingCompletedStateImpl implements LoadingCompletedState {
+  const _$LoadingCompletedStateImpl();
+
+  @override
+  String toString() {
+    return 'LoadingState.loadingCompletedState()';
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialLoadingState,
+    required TResult Function() loadingStartedState,
+    required TResult Function(String errorMessage) loadingFailedState,
+    required TResult Function() loadingSuccessState,
+    required TResult Function() loadingCompletedState,
+  }) {
+    return loadingCompletedState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialLoadingState,
+    TResult Function()? loadingStartedState,
+    TResult Function(String errorMessage)? loadingFailedState,
+    TResult Function()? loadingSuccessState,
+    TResult Function()? loadingCompletedState,
+    required TResult orElse(),
+  }) {
+    if (loadingCompletedState != null) {
+      return loadingCompletedState();
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadingCompletedState implements LoadingState {
+  const factory LoadingCompletedState() = _$LoadingCompletedStateImpl;
 }

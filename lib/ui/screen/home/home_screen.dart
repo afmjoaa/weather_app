@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:weather_app/core/weather_inherited_widget.dart';
 import 'package:weather_app/ui/screen/home/widgets/dashboard_widget.dart';
 import 'package:weather_app/ui/screen/home/widgets/menu_widget.dart';
+import 'package:weather_app/ui/shared/loading/loading_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String path = '/home_screen';
@@ -24,21 +26,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ZoomDrawer(
-        controller: drawerController,
-        style: DrawerStyle.Style1,
-        menuScreen: const MenuWidget(),
-        mainScreen: DashBoardWidget(
-          zoomDrawerController: drawerController,
+    return LoadingWidget(
+      loadingCubit: WeatherInheritedWidget.loadingCubit,
+      child: Scaffold(
+        body: ZoomDrawer(
+          controller: drawerController,
+          style: DrawerStyle.Style1,
+          menuScreen: const MenuWidget(),
+          mainScreen: DashBoardWidget(
+            zoomDrawerController: drawerController,
+          ),
+          borderRadius: 24,
+          disableGesture: false,
+          mainScreenTapClose: true,
+          showShadow: true,
+          angle: -5,
+          backgroundColor: Colors.black12,
+          slideWidth: MediaQuery.of(context).size.width * .30,
         ),
-        borderRadius: 24,
-        disableGesture: false,
-        mainScreenTapClose: true,
-        showShadow: true,
-        angle: -10,
-        backgroundColor: Colors.black12,
-        slideWidth: MediaQuery.of(context).size.width * .50,
       ),
     );
   }

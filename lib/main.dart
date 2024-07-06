@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:weather_app/core/weather_application.dart';
 import 'package:weather_app/core/weather_inherited_widget.dart';
 import 'package:weather_app/ui/screen/home/home_screen.dart';
+import 'package:weather_app/ui/shared/loading/loading_cubit.dart';
 
-void main() {
+Future<void> main() async {
+  await Hive.initFlutter();
   WidgetsFlutterBinding.ensureInitialized();
   WeatherApplication application = WeatherApplication();
   application.onCreate();
@@ -47,6 +50,7 @@ class WeatherApp extends StatelessWidget {
     );
 
     final WeatherInheritedWidget inheritedWidget = WeatherInheritedWidget(weatherApplication, app);
+    WeatherInheritedWidget.loadingCubit = LoadingCubit();
     return inheritedWidget;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:intl/intl.dart';
+import 'package:weather_app/core/weather_inherited_widget.dart';
 
 class Utility {
 
@@ -10,5 +11,17 @@ class Utility {
   static String timeStampToTime(timeStamp) {
     return DateFormat('hh:mm a').format(
         DateTime.fromMillisecondsSinceEpoch(timeStamp * 1000));
+  }
+
+  static void startLoadingAnimation() {
+    WeatherInheritedWidget.loadingCubit.loadingStart();
+  }
+
+  static void completeLoadingAnimation() {
+    WeatherInheritedWidget.loadingCubit.loadingReset();
+  }
+
+  static void showLoadingFailedError(String errorMessage) {
+    WeatherInheritedWidget.loadingCubit.loadingFailed(errorMessage);
   }
 }

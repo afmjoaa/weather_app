@@ -31,7 +31,7 @@ class MenuWidget extends StatelessWidget {
                         height: 20,
                         width: 20,
                         child: SvgPicture.asset(
-                          'assets/icons/about.svg',
+                          'asset/icons/about.svg',
                           fit: BoxFit.contain,
                           alignment: Alignment.center,
                         ),

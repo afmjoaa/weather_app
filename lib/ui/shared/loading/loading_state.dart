@@ -1,6 +1,15 @@
 part of 'loading_cubit.dart';
 
-@freezed
+@Freezed(
+    copyWith: false,
+    equal: false,
+    map: FreezedMapOptions(map: false, mapOrNull: false, maybeMap: false),
+    when: FreezedWhenOptions(when: true, whenOrNull: false, maybeWhen: true)
+)
 class LoadingState with _$LoadingState {
-  const factory LoadingState.initial() = _Initial;
+  const factory LoadingState.initialLoadingState() = InitialLoadingState;
+  const factory LoadingState.loadingStartedState() = LoadingStartedState;
+  const factory LoadingState.loadingFailedState(String errorMessage) = LoadingFailedState;
+  const factory LoadingState.loadingSuccessState() = LoadingSuccessState;
+  const factory LoadingState.loadingCompletedState() = LoadingCompletedState;
 }

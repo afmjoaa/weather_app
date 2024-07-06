@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:weather_app/data/api_provider/base_api_provider.dart';
+import 'package:weather_app/utility/utility.dart';
+
+import '../model/error_response.dart';
 
 class WeatherApiProvider extends BaseApiProvider{
 
@@ -15,19 +18,28 @@ class WeatherApiProvider extends BaseApiProvider{
   Interceptor getLoadingInterceptor() {
     return InterceptorsWrapper(
       onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
-        //Todo
+        Utility.startLoadingAnimation();
         handler.next(options);
       },
       onResponse: (Response<dynamic> response, ResponseInterceptorHandler handler,){
-        //Todo
+        Utility.completeLoadingAnimation();
         handler.next(response);
       },
       onError:  (DioException error, ErrorInterceptorHandler handler,) {
-        //Todo
+
+        String errorMessage = "An error occurred";
+        if (error.response != null && error.response!.data != null) {
+          var errorResponse = ErrorResponse.fromJson(error.response!.data);
+          errorMessage = errorResponse.message;
+        }
+
+        Utility.showLoadingFailedError(errorMessage);
         handler.next(error);
       }
     );
   }
+
+
 
   BaseOptions createBaseOptions() {
     final Map<String, String> baseHeaders = {
